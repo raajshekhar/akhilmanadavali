@@ -1,0 +1,14 @@
+@import "../../index.scss";
+
+.navigation-list {
+    a {
+        text-decoration: none;
+        font-size: $font-size-md;
+        border: 1px solid $white;
+        padding: 10px;
+        transition: .5s all;
+        &:hover {
+            border: 1px solid $blue-color;
+        }
+    }
+}

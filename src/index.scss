@@ -1,0 +1,55 @@
+$blue-color: #27348b;
+$light-grey: #f7f6f9;
+$text-light-grey: rgb(132, 141, 149);
+$white: #fff;
+
+$font-size-base: 16px;
+$font-size-md: $font-size-base * 1.125 !default; //18px
+$font-size-lg: $font-size-base * 1.25 !default; //20px
+$font-size-52: 3.30769231 * $font-size-base;
+
+// Media Query Ranges
+$xxs-screen:          320px !default;
+$xs-screen:           375px !default;
+$xs-large-screen:     414px !default;
+$small-screen-up:     767px !default;
+$small-screen-down:   768px !default;
+$small-medium-up:     811px !default;
+$small-medium-down:   991px !default;
+$medium-screen-up:    993px !default;
+$medium-screen-down:  1024px !default;
+$large-screen-up:     1290px !default;
+$ipad-pro-sceen-down: 1279px !default;
+$big-screen-down: 1263px !default;
+$big-screen-up: 1027px !default;
+
+body {
+  margin: 0;
+  font-family: 'Baloo 2', cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  scroll-behavior: smooth;
+  a:focus{
+    outline: none;
+  }
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.d-block {
+  display: block !important;
+}
+
+.text-center {
+  $text-center: text-center !important;
+}
+
+.App-header {
+  box-shadow: 0 8px 4px -7px rgba(0,0,0,0.1);
+}

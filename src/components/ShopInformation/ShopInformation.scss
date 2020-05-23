@@ -1,0 +1,23 @@
+@import "../../index.scss";
+
+.shop-information {
+    flex: 6;
+    img {
+        width: 100px;
+    }
+    h1 {
+        margin: 0;
+        color: $blue-color;
+        @media only screen and (min-width: $small-screen-up) {
+            margin-top: 100px;
+            line-height: 68px;
+            font-size: $font-size-52;
+            width: 90%;
+        }
+    }
+    p {
+        @media only screen and (min-width: $small-screen-up) {
+            width: 70%;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+@import "../../index.scss";
+
+footer {
+    bottom: 0px;
+    justify-content: space-around;
+    background: $blue-color;
+    color: $white;
+    font-weight: bolder;
+    padding: 10px;
+    font-size: $font-size-lg;
+    address {
+        font-style: initial;
+    }
+    a {
+        color: $white;
+        text-decoration: none;
+    }
+}

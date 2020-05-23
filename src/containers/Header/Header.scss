@@ -1,0 +1,34 @@
+@import "../../index.scss";
+
+.header-wrapper {
+    justify-content: space-between;
+    width: 90%;
+    margin: 0px auto;
+    padding: 10px 0px;
+    align-items: center;
+    a {
+        text-decoration: none;
+        &:hover, :focus {
+            color: $blue-color;
+        }
+    }
+    .header-logo {
+        flex: 8;
+        align-items: center;
+        img {
+            width: 50px;
+        }
+    }
+    .navigation {
+        flex: 4;
+        ul {
+            display: flex;
+            justify-content: space-evenly;
+            list-style: none;
+            li:hover {
+                cursor: pointer;
+                color: $blue-color;
+            }
+        }
+    }
+}
