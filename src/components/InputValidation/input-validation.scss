@@ -1,0 +1,58 @@
+@import "~bootstrap/scss/functions";
+@import '~bootstrap/scss/mixins';
+@import "../../index.scss";
+
+.custom-input-validation {
+    input[type=checkbox]:checked ~ .input-checkbox-check::before {
+        content: '\2713';
+        transform: translate(-1px, -2px);
+        font-size: $font-size-base;
+    }
+    input[type=checkbox] {
+        opacity: 0;
+        z-index: 999999999;
+        left: 20px;
+    }
+    
+    .input-checkbox-check {
+        width: 16px;
+        height: 16px;
+        background: $white 0% 0% no-repeat padding-box;
+        border: 1px solid $black;
+        transform: translate(0px, -19px);
+        position: absolute;
+        &::before {
+            display: block;
+            content: '';
+            margin: 1px 3px;
+            transition: background 0.25s linear;
+            -webkit-transition: background 0.25s linear;
+        }
+    }
+    .error-icon, .success-icon {
+        right: 3px;
+        height: 20px;
+        width: 20px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .material-icons {
+            font-size: $font-size-base;
+          }
+      }
+    .error-icon {
+        background: red;
+    }
+    .success-icon {
+        background: green;
+    }
+    .uploaded-img {
+        img {
+            width: 100%;
+        }
+    }
+}

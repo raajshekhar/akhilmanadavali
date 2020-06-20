@@ -5,6 +5,8 @@ import history from './history';
 import MainRoutes from './MainRoutes';
 import Header from './containers/Header/Header';
 import Footer from './components/Footer/Footer';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
 import './index.scss';
 import * as serviceWorker from './serviceWorker';
 

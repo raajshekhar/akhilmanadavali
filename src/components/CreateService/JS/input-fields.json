@@ -1,0 +1,62 @@
+{
+    "fields": [{
+        "name": "Service_name",
+        "id": "service_name",
+        "type": "text",
+        "placeholder": "Enter Service Name",
+        "maxLength": "150",
+        "value": "",
+        "readOnly": false,
+        "colLength": "col-sm-6 col-xs-12",
+        "labelName": "Service Name",
+        "restrictions": ["numbers", "left-space", "special-characters"],
+        "requiredErrorMessage": "Please Enter Service Name",
+        "popOverPlacement": ["bottom", "bottom"],
+        "autoComplete": "off"
+    }, 
+    {
+        "name": "service_description",
+        "id": "service_description",
+        "type": "text",
+        "placeholder": "Enter Service Description",
+        "maxLength": "150",
+        "value": "",
+        "readOnly": false,
+        "colLength": "col-sm-6 col-xs-12",
+        "labelName": "Service Description",
+        "restrictions": ["numbers", "left-space", "special-characters"],
+        "requiredErrorMessage": "Please Enter Last Name",
+        "popOverPlacement": ["bottom", "bottom"],
+        "autoComplete": "off"
+    }, 
+    {
+        "name": "path",
+        "id": "path",
+        "type": "text",
+        "placeholder": "Enter Path",
+        "maxLength": "150",
+        "value": "",
+        "readOnly": false,
+        "colLength": "col-sm-6 col-xs-12",
+        "labelName": "Path",
+        "restrictions": ["numbers", "left-space", "special-characters"],
+        "requiredErrorMessage": "Please Enter Path",
+        "popOverPlacement": ["bottom", "bottom"],
+        "autoComplete": "off"
+    }, 
+    {
+        "name": "service_image",
+        "id": "service_image",
+        "type": "file",
+        "placeholder": "Upload Service Image",
+        "maxLength": "5000000",
+        "value": "",
+        "readOnly": false,
+        "colLength": "col-sm-6 col-xs-12",
+        "labelName": "Service Image",
+        "accept": "",
+        "requiredErrorMessage": "Please Upload Service Image",
+        "popOverPlacement": ["bottom", "bottom"],
+        "autoComplete": "off"
+    }]
+}
