@@ -5,13 +5,14 @@
 .custom-input-validation {
     input[type=checkbox]:checked ~ .input-checkbox-check::before {
         content: '\2713';
-        transform: translate(-1px, -2px);
+        transform: translate(-1px, -4px);
         font-size: $font-size-base;
     }
     input[type=checkbox] {
         opacity: 0;
         z-index: 999999999;
         left: 20px;
+        margin-top: 7px;
     }
     
     .input-checkbox-check {
@@ -43,7 +44,14 @@
         .material-icons {
             font-size: $font-size-base;
           }
-      }
+    }
+    &.select-wrapper {
+        .error-icon, .success-icon {
+            right: 20px !important;
+            top: 40px;
+        }
+    }
+    
     .error-icon {
         background: red;
     }
@@ -53,6 +61,19 @@
     .uploaded-img {
         img {
             width: 100%;
+        }
+    }
+    &.checkbox-wrapper {
+        margin-top: 30px;
+    }
+    &.upload-image-wrapper {
+        .closeIcon  span {
+            cursor: pointer;
+            position: absolute;
+            right: 0;
+            margin-top: 8px;
+            display: flex;
+            background: red;
         }
     }
 }

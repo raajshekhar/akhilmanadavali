@@ -1,0 +1,46 @@
+@import "../../index.scss";
+
+.category-item {
+    padding: 16px;
+    border: 1px solid $light-grey;
+    img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        margin: 6px 16px 6px 0;
+    }
+    .item-details {
+        width: 100%;
+        .item-info {
+            flex: 5;
+        }
+        .item-count {
+            flex: 3;
+            max-height: 40px;
+            min-width: 30px;
+            align-items: center;
+            justify-content: flex-end;
+            div {
+                border: .5px solid $blue-color;
+                padding: 7px 10px;
+                flex-basis: 33.33px;
+            }
+            .count {
+                min-width: 40px;
+                text-align: center;
+            }
+            .plus, .minus {
+                background-color: $blue-color;
+                color: $white;
+            }
+        }
+    }
+    .item-description {
+        border-top: 1px solid $light-grey;
+        padding: 10px 0px;
+        margin-top: 10px;
+        li {
+            list-style: circle;
+        }
+    }
+}

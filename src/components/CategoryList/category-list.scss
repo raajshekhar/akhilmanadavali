@@ -1,0 +1,17 @@
+@import "../../index.scss";
+
+.list-group {
+    border-radius: 0px !important;
+    max-height: 80vh;
+    overflow: auto;
+    min-height: 80vh;
+    border-right: 1px solid $light-grey;
+    .list-group-item {
+        border-right: 0px;
+        &.active {
+            background-color: $blue-color;
+            border-color: $blue-color;
+            transition: .8s cubic-bezier(.4,.87,.31,1);
+        }
+    }
+}

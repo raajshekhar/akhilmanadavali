@@ -1,0 +1,10 @@
+@import "../../index.scss";
+
+.category-list {
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    .badge-light {
+        color: #ffff;
+        background-color: #27348b;
+    }
+}

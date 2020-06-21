@@ -152,7 +152,7 @@ const InputField = ({
   };
 
   return (
-    <div className='custom-input-validation'>
+    <div className={`custom-input-validation ${type ==='checkbox' ? 'checkbox' : 'input'}-wrapper`}>
       {(labelName && type!=='checkbox') && (
         <Label htmlFor={id} className={labelClass}>
           {labelName}
@@ -244,6 +244,7 @@ const SelectField = ({
     flip: false
   };
   return (
+    <div className="custom-input-validation select-wrapper">
     <div className="position-relative">
       {labelName && (
         <Label htmlFor={id} className={labelClass}>
@@ -254,7 +255,7 @@ const SelectField = ({
       <Input {...inputFields}>
         <option hidden value="">{placeholder}</option>
         {options.map(data => (
-            <option key={data.id +''+Math.random()} data-content={data.name} value={data.id}>
+            <option key={data.id} data-content={data.name} value={data.id}>
               {data.name}
             </option>
           ))}
@@ -265,6 +266,7 @@ const SelectField = ({
           <PopoverBody className="errorInfoMessage">{errorMsg}</PopoverBody>
         </Popover>
       )}
+    </div>
     </div>
   );
 };
