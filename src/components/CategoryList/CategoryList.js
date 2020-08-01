@@ -3,6 +3,7 @@ import { ListGroup, ListGroupItem } from 'reactstrap';
 import './category-list.scss';
 
 const data = [{id:1, name: 'Fans'},{id:2, name: 'Fans'}];
+const closeMenuIcon = <span className="material-icons mt-2">menu_open</span>;
 
 const CategoryList = (props) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -13,9 +14,14 @@ const CategoryList = (props) => {
 
   return (
     <ListGroup className="service-category-list">
+      <div className="text-right service-category-list-sidebar d-flex justify-content-between align-items-center">
+        <h3 className="ml-2">Services</h3>
+        <span onClick={props.toggleSidebar}>{closeMenuIcon}</span>
+      </div> 
       {data.map((list, index) => {
+        const key = index;
         return (
-          <ListGroupItem className={`${selectedIndex === index ? 'active':''}`} onClick={()=>selectCategory(index)}>Cras justo odio</ListGroupItem>
+          <ListGroupItem key={key} className={`${selectedIndex === index ? 'active':''}`} onClick={()=>selectCategory(index)}>Cras justo odio</ListGroupItem>
         )
       })}
     </ListGroup>

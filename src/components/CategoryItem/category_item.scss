@@ -24,12 +24,17 @@
                 border: .5px solid $blue-color;
                 padding: 7px 10px;
                 flex-basis: 33.33px;
+                transition: .5s cubic-bezier(.4,.87,.31,1);
+                &.disabled {
+                    filter: opacity(0.5);
+                }
             }
             .count {
                 min-width: 40px;
                 text-align: center;
             }
             .plus, .minus {
+                cursor: pointer;
                 background-color: $blue-color;
                 color: $white;
             }

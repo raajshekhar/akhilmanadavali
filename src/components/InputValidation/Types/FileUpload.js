@@ -12,7 +12,6 @@ const ImageUpload = (props) => {
         value,
         onChange,
         onBlur,
-        setFieldValue,
         className,
         touched,
         placement,
@@ -63,7 +62,6 @@ const ImageUpload = (props) => {
         reader.onloadend = () => {
             setImagePreviewUrl(reader.result);
             onChange(e);
-            setUploadImgSizeError('');
             const uploadImagePopOver = document.querySelector('.upload-image .popover');
             const statusIcon = document.querySelector('.upload-image-wrapper .error-icon');
 

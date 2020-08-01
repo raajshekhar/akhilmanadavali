@@ -7,4 +7,26 @@
         color: #ffff;
         background-color: #27348b;
     }
+    .menu-icon-wrapper {
+        display: none;
+    }
+    @media screen and (max-width: $xs-large-screen) {
+        .sidebar {
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            background: #fff;
+            transition: .3s cubic-bezier(.4,.87,.31,1);
+            transform: translateX(-100%);
+        }
+        .opened {
+            transform: translateX(0%);
+        }
+        .menu-icon-wrapper {
+            display: inline-block;
+        }
+        .list-content {
+            margin: 10px;
+        }    
+    }
 }

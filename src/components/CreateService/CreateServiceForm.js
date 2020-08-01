@@ -3,7 +3,7 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { Row, Container } from 'reactstrap';
 import InputField from '../InputField';
-import { createInitialValuesObject, yupValidationObject } from './JS/functions';
+import { createInitialValuesObject, yupValidationObject, createService } from './JS/functions';
 import fieldsJson from './JS/input-fields.json'
 
 class CreateServiceForm extends React.Component {
@@ -26,7 +26,10 @@ class CreateServiceForm extends React.Component {
         {(props) => {
           props.submitHandler = async e => {
             props.validateForm();
+            console.clear()
+            console.log(props.isValid, props.values)
             if (!props.isValid) return false;
+            createService(props.values)
           };
 
           return (

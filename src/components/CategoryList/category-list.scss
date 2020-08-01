@@ -14,4 +14,13 @@
             transition: .8s cubic-bezier(.4,.87,.31,1);
         }
     }
+    .service-category-list-sidebar {
+        display: none !important;
+        @media screen and (max-width: $xs-large-screen) {
+            display: flex !important;
+        }
+        span.material-icons {
+            font-size: 40px;
+        }
+    }
 }

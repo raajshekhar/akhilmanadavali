@@ -31,7 +31,8 @@ const InputValidationField = (props) => {
     onKeyPress = () => {},
     readOnly=false,
     restrictions = [],
-    defaultChecked = false
+    defaultChecked = false,
+    setFieldValue = () => {}
   } = props;
   const passToField = {
     type,
@@ -63,7 +64,7 @@ const InputValidationField = (props) => {
     if (errorMsg) showIcon = closeIcon;
     else if(value) showIcon = checkIcon;
   }
-  if(type === 'file') return ImageUpload({ ...passToField, showIcon });
+  if(type === 'file') return ImageUpload({ ...passToField, showIcon, setFieldValue });
   return type !== 'select'
     ? InputField({ ...passToField, showIcon })
     : SelectField({ ...passToField, showIcon });

@@ -5,7 +5,7 @@ import './navigation-items.scss';
 const NavigationItems = () => {
     const links = [{ title: 'Home', to: '/service'}, { title: 'About Us', to: '/service'}, { title: 'Contact Us', to: '/service'}];
     return (
-        <ul className="navigation-list">
+        <ul className="navigation-list mb-0">
             { links.map(link => <li key={link.title}><Link to={link.to}>{link.title}</Link></li>) }
         </ul>
     );
