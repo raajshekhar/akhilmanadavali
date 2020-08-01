@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from './action';
+import { ADD_TO_CART, REMOVE_FROM_CART, GET_SERVICE_CATEGORIES } from './action';
 
 const image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRNtJmjuPtrxw9PzpShyk2DQXNk6qRjzl7myhPBzVIEZqgdgGlO&usqp=CAU';
 
@@ -9,7 +9,8 @@ const initialState = {
             {id: 2, name: 'Two', time: 20, amount: 200, max: 10, path:image}
         ]
     },
-    cartCost: 0
+    cartCost: 0,
+    serviceCategories: {}
 };
 
 
@@ -40,6 +41,16 @@ const commonReducer = (state = initialState, action) => {
                 } else return data
             });
             return { ...state };
+        case GET_SERVICE_CATEGORIES:
+            console.log('GET_SERVICE_CATEGORIES:: ',action)
+            const serviceCategories = {...state.serviceCategories};
+            serviceCategories[action.data.id] = action.data.categories;
+            return {
+                ...state,
+                serviceCategories: {
+                    ...serviceCategories
+                }
+            }
         default:
             return state;
     }
@@ -47,5 +58,6 @@ const commonReducer = (state = initialState, action) => {
 
 export const getCategoryServiceItems = state => state.commonReducer.categoryServices.data || [];
 export const getCartAmount = state => state.commonReducer.cartCost;
+export const getAllServiceCategories = state => state.commonReducer.serviceCategories;
 
 export default commonReducer;

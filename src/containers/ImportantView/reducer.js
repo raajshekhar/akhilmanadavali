@@ -13,4 +13,6 @@ const homeReducer = (state = initialState, action) => {
     }
 };
 
+export const getHomePageServices = (state) => state.homeReducer.services;
+
 export default homeReducer;

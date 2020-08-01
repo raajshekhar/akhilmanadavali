@@ -10,15 +10,16 @@ function InputFields(props) {
       errors,
       handleChange,
       setFieldTouched,
-      handleBlur,
-      onChangeUpdateAccordion
+      handleBlur
     },
+    onchangeHandler = () => {},
     field,
   } = props;
 
-  const onChangeHandler = (e) => {
+  const inputFieldonChangeHandler = (e) => {
     handleChange(e);
     setFieldTouched(field.id, true);
+    onchangeHandler({id: field.id, val: e.target.value});
   }
 
   return (
@@ -27,7 +28,7 @@ function InputFields(props) {
         {...field}
         id={field.id}
         value={values[field.id]}
-        onChange={onChangeHandler}
+        onChange={inputFieldonChangeHandler}
         labelImp={field.requiredErrorMessage}
         className={(errors[field.id] && touched[field.id]) ? 'text-input error': 'text-input'}
         placement='bottom'
@@ -41,7 +42,8 @@ function InputFields(props) {
 
 InputFields.propTypes = {
   field: PropTypes.object.isRequired,
-  formikprops: PropTypes.object.isRequired
+  formikprops: PropTypes.object.isRequired,
+  onchangeHandler: PropTypes.func
 };
 
 export default React.memo(InputFields);

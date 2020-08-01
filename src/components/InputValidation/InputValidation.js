@@ -167,7 +167,7 @@ const InputField = ({
           <sup className={`text-danger ${labelImp ? '' : 'd-none'}`}>*</sup>
         </Label>
       )}
-        <Input {...inputFields} onChange={(e)=>{onChange(e)}} onKeyPress={(e)=>{customOnKeyPress(e, restrictions, onKeyPress)}}  />
+        <Input {...inputFields} onChange={onChange} onKeyPress={(e)=>{customOnKeyPress(e, restrictions, onKeyPress)}}  />
         {showIcon}
         {type==='checkbox' ? <div className="input-checkbox-check" /> : null}
       </div>

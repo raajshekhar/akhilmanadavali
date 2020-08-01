@@ -54,5 +54,4 @@ export async function createService(formData){
     } catch (error) {
         console.log('error::: ',error);
     }
-
 }

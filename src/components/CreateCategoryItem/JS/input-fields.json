@@ -102,7 +102,7 @@
         "colLength": "col-sm-6 col-xs-12",
         "labelName": "Category Image",
         "accept": "",
-        "requiredErrorMessage": "Please Upload Image",
+        "requiredErrorMessage": "",
         "popOverPlacement": ["bottom", "bottom"],
         "autoComplete": "off"
     },
@@ -127,7 +127,7 @@
         "type": "checkbox",
         "placeholder": "",
         "maxLength": "10",
-        "value": "",
+        "value": true,
         "readOnly": false,
         "colLength": "col-sm-6 col-xs-12",
         "labelName": "Category Item Status",
