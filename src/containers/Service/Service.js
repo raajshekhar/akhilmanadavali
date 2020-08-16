@@ -5,8 +5,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import CategoryList from '../../components/CategoryList/CategoryList';
 import CategoryItem from '../../components/CategoryItem/CategoryItem';
-import { getCategoryServiceItems, getCartAmount } from '../ShoppingPage/reducer';
-import { addTodoCart, removeFromCart } from '../ShoppingPage/action';
+import { getAllServiceCategories, getCartAmount } from '../ShoppingPage/reducer';
+import { addTodoCart, removeFromCart, getCategoriesListAction } from '../ShoppingPage/action';
 import ContinueToastr from '../../components/BottomContinueToastr';
 import './service.scss';
 
@@ -21,23 +21,29 @@ class Service extends Component {
         };
     }
 
+    componentDidMount(){
+        console.clear()
+        // console.log('this.props::::::: ',this.useQuery());
+        this.props.getCategoriesListAction({select_category_service: 15})
+    }
+
     toggleSidebar = () => this.setState(prevState => ({sidebarOpen: !prevState.sidebarOpen}))
 
     render(){
-        const { match: { params: { name } }, categoryServiceItems, addTodoCart, removeFromCart, cartAmount } = this.props;
+        const { match: { params: { name } }, getAllServiceCategories, addTodoCart, removeFromCart, cartAmount } = this.props;
 
         const { sidebarOpen } = this.state;
         return (
             <Container className="category-list">
                 <Row>
-                    <Col sm="3" className={`sidebar ${sidebarOpen ? 'opened':'closed'}`}> <CategoryList  toggleSidebar={this.toggleSidebar} /> </Col>
+                    <Col sm="3" className={`sidebar ${sidebarOpen ? 'opened':'closed'}`}> <CategoryList  toggleSidebar={this.toggleSidebar} data={Object.keys(getAllServiceCategories).length && getAllServiceCategories[15]} /> </Col>
                     <Col sm="9" className="list-content">
                         <div className="d-flex justify-content-between">
                             <h3 className="mt-2 font-weight-bold"><span className="menu-icon-wrapper mr-2" onClick={this.toggleSidebar}>{sidebarOpen ? closeMenuIcon : menuIcon}</span> Service: { name }  <span className="badge badge-light">2</span></h3>
-                            <div className="mt-2 font-weight-bold">{categoryServiceItems.length} items</div>
+                            <div className="mt-2 font-weight-bold">{Object.keys(getAllServiceCategories).length && getAllServiceCategories[15].length} items</div>
                         </div>
                         <Row>
-                        {categoryServiceItems.map((item, index) => {
+                        {Object.keys(getAllServiceCategories).length && getAllServiceCategories[15].map((item, index) => {
                             const key = index;
                             return (
                                 <Col sm="6" key={key}>
@@ -55,17 +61,20 @@ class Service extends Component {
 }
 
 Service.propTypes = {
-    categoryServiceItems: PropTypes.array.isRequired
+    categoryServiceItems: PropTypes.array.isRequired,
+    getCategoriesListAction: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => ({
-    categoryServiceItems: getCategoryServiceItems(state),
-    cartAmount: getCartAmount(state)
+    // categoryServiceItems: getCategoryServiceItems(state),
+    cartAmount: getCartAmount(state),
+    getAllServiceCategories: getAllServiceCategories(state)
 })
 
 const mapActionToProps = dispatch => bindActionCreators({
     addTodoCart: addTodoCart,
-    removeFromCart: removeFromCart
+    removeFromCart: removeFromCart,
+    getCategoriesListAction: getCategoriesListAction
 }, dispatch);
 
 export default connect(mapStateToProps, mapActionToProps)(Service);

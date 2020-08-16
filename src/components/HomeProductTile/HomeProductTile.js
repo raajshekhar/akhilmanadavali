@@ -41,7 +41,7 @@ const HomeProductTile = () => {
 
     const markup = (item) =>(
             <div className="home-product-cell" key={item.name}>
-                <Link to={'service/'+item.path}>
+                <Link to={{ pathname: 'service/'+item.path, search:`?id=${item.id}` }}>
                     <div className="home-product-cell-img">
                         <img className="d-block" width="315" src={item.image_path} />
                     </div>

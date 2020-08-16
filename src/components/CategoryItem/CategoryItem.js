@@ -11,7 +11,7 @@ const CategoryItem = ({data, addTodoCart, removeFromCart}) => {
     return (
         <div className="category-item">
             <div className="d-flex">
-                <img className="mr-2" srcSet={data.path} alt="Category Item" />
+                <img className="mr-2" srcSet={data.image_path} alt="Category Item" />
                 <div className="item-details">
                     <h5 className="font-weight-bold mt-1">{data.name}</h5>
                     <div className="d-flex justify-content-xl-between">

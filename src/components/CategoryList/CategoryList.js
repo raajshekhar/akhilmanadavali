@@ -8,6 +8,8 @@ const closeMenuIcon = <span className="material-icons mt-2">menu_open</span>;
 const CategoryList = (props) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
+  const { data = [] } = {...props};
+
   const selectCategory = (index) => {
     setSelectedIndex(index);
   }
@@ -17,11 +19,11 @@ const CategoryList = (props) => {
       <div className="text-right service-category-list-sidebar d-flex justify-content-between align-items-center">
         <h3 className="ml-2">Services</h3>
         <span onClick={props.toggleSidebar}>{closeMenuIcon}</span>
-      </div> 
-      {data.map((list, index) => {
+      </div>
+      {Array.isArray(data) && data.map((list, index) => {
         const key = index;
         return (
-          <ListGroupItem key={key} className={`${selectedIndex === index ? 'active':''}`} onClick={()=>selectCategory(index)}>Cras justo odio</ListGroupItem>
+        <ListGroupItem key={key} className={`${selectedIndex === index ? 'active':''}`} onClick={()=>selectCategory(index)}>{list.name}</ListGroupItem>
         )
       })}
     </ListGroup>
